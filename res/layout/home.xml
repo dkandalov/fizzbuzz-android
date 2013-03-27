@@ -11,8 +11,9 @@
         android:id="@+id/textView"
         android:clickable="true"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:onClick="userWantsToOpenZenMode" />
+        android:textSize="40dp"
+        android:onClick="userWantsToOpenZenMode"
+        android:paddingTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,8 +22,9 @@
         android:id="@+id/textView2"
         android:clickable="true"
         android:layout_gravity="center"
-        android:textSize="30dp"
-        android:onClick="userWantsToOpenSettings" />
+        android:textSize="40dp"
+        android:onClick="userWantsToOpenSettings"
+        android:paddingTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,7 +32,8 @@
         android:text="Exit"
         android:id="@+id/textView1"
         android:layout_gravity="center"
-        android:textSize="30dp"
+        android:textSize="40dp"
         android:onClick="userWantsToExit"
-        android:clickable="true" />
+        android:clickable="true"
+        android:paddingTop="10dp" />
 </LinearLayout>

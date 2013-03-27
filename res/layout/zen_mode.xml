@@ -8,12 +8,12 @@
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="FizzBuzz"
+    android:text="FizzBuzzWoof"
     android:layout_gravity="center"
     android:clickable="true"
     android:id="@+id/zenModeFizzBuzzText"
     android:onClick="fizzBuzzCount"
-    android:textSize="50dp"
+    android:textSize="49dp"
     android:typeface="normal" />
 
 </LinearLayout>
