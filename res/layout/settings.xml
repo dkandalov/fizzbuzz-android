@@ -28,14 +28,16 @@
             android:layout_height="wrap_content"
             android:text="FizzBuzz"
             android:id="@+id/fizzBuzzRadioButton"
-            android:checked="false" />
+            android:checked="false"
+            android:onClick="userSelectedFizzBuzzType" />
 
         <RadioButton
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="FizzBuzzWoof"
             android:id="@+id/fizzBuzzWoofRadioButton"
-            android:checked="false" />
+            android:checked="false"
+            android:onClick="userSelectedFizzBuzzType" />
 
     </RadioGroup>
 

@@ -2,6 +2,7 @@ package org.fizzbuzzwoof.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RadioGroup;
 import org.fizzbuzzwoof.R;
 import org.fizzbuzzwoof.businesslogic.FizzBuzz;
@@ -13,6 +14,16 @@ public class Settings extends Activity {
 
 		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.fizzBuzzTypeRadioGroup);
 		radioGroup.check(convertToId(FizzBuzz.type));
+	}
+
+	public void userSelectedFizzBuzzType(View view) {
+		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.fizzBuzzTypeRadioGroup);
+		FizzBuzz.type = convertToType(radioGroup.getCheckedRadioButtonId());
+		finish();
+	}
+
+	private static FizzBuzz.Type convertToType(int radioButtonId) {
+		return radioButtonId == R.id.fizzBuzzRadioButton ? FizzBuzz.Type.FizzBuzz : FizzBuzz.Type.FizzBuzzWoof;
 	}
 
 	private static int convertToId(FizzBuzz.Type type) {
