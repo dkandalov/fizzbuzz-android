@@ -1,11 +1,12 @@
-package org.fizzbuzzwoof;
+package org.fizzbuzzwoof.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import org.fizzbuzzwoof.R;
 
-public class FizzBuzzZenMode extends Activity {
+public class ZenMode extends Activity {
 	private int counter = 0;
 
 	@Override public void onCreate(Bundle savedInstanceState) {
