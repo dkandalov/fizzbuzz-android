@@ -3,24 +3,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/textView"
+        android:clickable="true"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:onClick="userWantsToOpenSettings" />
+
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_gravity="center"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:id="@+id/fizzBuzzTypeRadioGroup"
+        android:focusableInTouchMode="false"
+        android:longClickable="true"
+        android:focusable="false">
 
         <RadioButton
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="FizzBuzz"
-            android:id="@+id/radioButton"
+            android:id="@+id/fizzBuzzRadioButton"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="FizzBuzzWoof"
-            android:id="@+id/radioButton1"
+            android:id="@+id/fizzBuzzWoofRadioButton"
             android:checked="false" />
 
     </RadioGroup>

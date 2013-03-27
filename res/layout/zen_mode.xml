@@ -10,7 +10,7 @@
     android:text="FizzBuzz"
     android:layout_gravity="center"
     android:clickable="true"
-    android:id="@id/fizzBuzzText"
+    android:id="@id/zenModeFizzBuzzText"
     android:onClick="fizzBuzzCount"
     android:textSize="50dp"
     android:typeface="normal" />

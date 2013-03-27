@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 import org.fizzbuzzwoof.R;
 
+import static org.fizzbuzzwoof.businesslogic.FizzBuzz.fizzBuzz;
+
 public class ZenMode extends Activity {
 	private int counter = 0;
 
@@ -13,19 +15,12 @@ public class ZenMode extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.zen_mode);
 
-		TextView fizzBuzzText = (TextView) findViewById(R.id.fizzBuzzText);
+		TextView fizzBuzzText = (TextView) findViewById(R.id.zenModeFizzBuzzText);
 		fizzBuzzText.setText(fizzBuzz(++counter));
 	}
 
 	public void fizzBuzzCount(View view) {
-		TextView fizzBuzzText = (TextView) findViewById(R.id.fizzBuzzText);
+		TextView fizzBuzzText = (TextView) findViewById(R.id.zenModeFizzBuzzText);
 		fizzBuzzText.setText(fizzBuzz(++counter));
-	}
-
-	private static String fizzBuzz(int counter) {
-		if (counter % 3 == 0 && counter % 5 == 0) return "FizzBuzz";
-		else if (counter % 3 == 0) return "Fizz";
-		else if (counter % 5 == 0) return "Buzz";
-		else return String.valueOf(counter);
 	}
 }

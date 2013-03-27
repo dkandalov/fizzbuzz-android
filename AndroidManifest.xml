@@ -13,6 +13,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.Settings"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
                   android:label="@string/settings_title"/>
     </application>
 </manifest>
