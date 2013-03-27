@@ -7,11 +7,13 @@
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello World, FizzBuzzActivity"
+    android:text="FizzBuzz"
     android:layout_gravity="center"
     android:clickable="true"
     android:id="@id/fizzBuzzText"
-    android:onClick="fizzBuzzCount" />
+    android:onClick="fizzBuzzCount"
+    android:textSize="50dp"
+    android:typeface="normal" />
 
 </LinearLayout>
 
