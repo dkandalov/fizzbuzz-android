@@ -4,13 +4,15 @@
       android:versionCode="1"
       android:versionName="1.0">
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
-        <activity android:name="FizzBuzzActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        <activity android:name=".FizzBuzzZenMode" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
-        <activity android:name="FizzBuzzHome" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        <activity android:name=".FizzBuzzHome" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FizzBuzzSettings"
+                  android:label="@string/settings_title"/>
     </application>
 </manifest>

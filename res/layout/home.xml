@@ -7,12 +7,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FizzBuzz Zen Mode"
+        android:text="Zen Mode"
         android:id="@+id/textView"
         android:clickable="true"
         android:layout_gravity="center"
         android:textSize="30dp"
         android:onClick="userWantsToOpenZenMode" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/textView2"
+        android:clickable="true"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:onClick="userWantsToOpenSettings" />
 
     <TextView
         android:layout_width="wrap_content"

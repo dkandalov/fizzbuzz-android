@@ -12,8 +12,11 @@ public class FizzBuzzHome extends Activity {
 	}
 
 	public void userWantsToOpenZenMode(View view) {
-		Intent intent = new Intent(this, FizzBuzzActivity.class);
-		startActivity(intent);
+		startActivity(new Intent(this, FizzBuzzZenMode.class));
+	}
+
+	public void userWantsToOpenSettings(View view) {
+		startActivity(new Intent(this, FizzBuzzSettings.class));
 	}
 
 	public void userWantsToExit(View view) {

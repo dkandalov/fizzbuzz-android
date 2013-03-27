@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:gravity="center_vertical">
+
+        <RadioButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="FizzBuzz"
+            android:id="@+id/radioButton"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="FizzBuzzWoof"
+            android:id="@+id/radioButton1"
+            android:checked="false" />
+
+    </RadioGroup>
+
+</LinearLayout>

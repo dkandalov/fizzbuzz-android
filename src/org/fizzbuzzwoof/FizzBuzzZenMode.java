@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class FizzBuzzActivity extends Activity {
+public class FizzBuzzZenMode extends Activity {
 	private int counter = 0;
 
 	@Override public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.zen_mode);
 
 		TextView fizzBuzzText = (TextView) findViewById(R.id.fizzBuzzText);
 		fizzBuzzText.setText(fizzBuzz(++counter));
@@ -27,5 +27,4 @@ public class FizzBuzzActivity extends Activity {
 		else if (counter % 5 == 0) return "Buzz";
 		else return String.valueOf(counter);
 	}
-
 }
