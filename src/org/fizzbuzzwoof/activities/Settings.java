@@ -1,6 +1,8 @@
 package org.fizzbuzzwoof.activities;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
@@ -20,6 +22,16 @@ public class Settings extends Activity {
 		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.fizzBuzzTypeRadioGroup);
 		FizzBuzz.type = convertToType(radioGroup.getCheckedRadioButtonId());
 		finish();
+	}
+
+	@Override protected void onPause() {
+		super.onPause();
+		saveToConfig(FizzBuzz.type);
+	}
+
+	private void saveToConfig(FizzBuzz.Type type) {
+		SharedPreferences preferences = getSharedPreferences(getString(R.string.config_file_key), Context.MODE_PRIVATE);
+		preferences.edit().putString(getString(R.string.config_fizzBuzzType), type.toString());
 	}
 
 	private static FizzBuzz.Type convertToType(int radioButtonId) {
