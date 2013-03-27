@@ -6,16 +6,29 @@ package org.fizzbuzzwoof.businesslogic;
  */
 public class FizzBuzz {
 	public enum Type {
-		FizzBuzz,
-		FizzBuzzWoof
+		FizzBuzz {
+			@Override public String numberToString(int n) {
+				if (n % 3 == 0 && n % 5 == 0) return "FizzBuzz";
+				else if (n % 3 == 0) return "Fizz";
+				else if (n % 5 == 0) return "Buzz";
+				else return String.valueOf(n);
+			}
+		},
+		FizzBuzzWoof {
+			@Override public String numberToString(int n) {
+				if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0) return "FizzBuzzWoof";
+				else if (n % 3 == 0 && n % 5 == 0) return "FizzBuzz";
+				else if (n % 3 == 0 && n % 7 == 0) return "FizzWoof";
+				else if (n % 5 == 0 && n % 7 == 0) return "BuzzWoof";
+				else if (n % 3 == 0) return "Fizz";
+				else if (n % 5 == 0) return "Buzz";
+				else if (n % 7 == 0) return "Woof";
+				else return String.valueOf(n);
+			}
+		};
+
+		public abstract String numberToString(int n);
 	}
 
 	public static Type type = Type.FizzBuzz;
-
-	public static String fizzBuzz(int counter) {
-		if (counter % 3 == 0 && counter % 5 == 0) return "FizzBuzz";
-		else if (counter % 3 == 0) return "Fizz";
-		else if (counter % 5 == 0) return "Buzz";
-		else return String.valueOf(counter);
-	}
 }
