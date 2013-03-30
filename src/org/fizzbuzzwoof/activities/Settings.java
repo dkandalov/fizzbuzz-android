@@ -30,8 +30,9 @@ public class Settings extends Activity {
 	}
 
 	private void saveToConfig(FizzBuzz.Type type) {
-		SharedPreferences preferences = getSharedPreferences(getString(R.string.config_file_key), Context.MODE_PRIVATE);
-		preferences.edit().putString(getString(R.string.config_fizzBuzzType), type.toString());
+		SharedPreferences.Editor preferences = getSharedPreferences(getString(R.string.config_file_key), Context.MODE_PRIVATE).edit();
+		preferences.putString(getString(R.string.config_fizzBuzzType), type.toString());
+		preferences.commit();
 	}
 
 	private static FizzBuzz.Type convertToType(int radioButtonId) {

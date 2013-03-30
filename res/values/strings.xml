@@ -4,4 +4,5 @@
     <string name="settings_title">Settings</string>
     <string name="config_fizzBuzzType">fizzBuzzType</string>
     <string name="config_file_key">com.fizzbuzzwoof.config</string>
+    <string name="config_zen_mode_counter">zenModeCounter</string>
 </resources>
