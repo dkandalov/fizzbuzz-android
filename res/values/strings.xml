@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FizzBuzzWoof</string>
+    <string name="app_name">Fizz Buzz Woof</string>
     <string name="settings_title">Settings</string>
     <string name="config_fizzBuzzType">fizzBuzzType</string>
     <string name="config_file_key">com.fizzbuzzwoof.config</string>
