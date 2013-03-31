@@ -10,7 +10,7 @@ import org.fizzbuzzwoof.R;
 import org.fizzbuzzwoof.businesslogic.FizzBuzz;
 
 public class Settings extends Activity {
-	public void onCreate(Bundle savedInstanceState) {
+	@Override public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings);
 

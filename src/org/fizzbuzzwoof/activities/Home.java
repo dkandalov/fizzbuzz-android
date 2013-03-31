@@ -30,6 +30,10 @@ public class Home extends Activity {
 		startActivity(new Intent(this, ZenMode.class));
 	}
 
+	public void userWantsToOpenNormalMode(View view) {
+		startActivity(new Intent(this, NormalMode.class));
+	}
+
 	public void userWantsToOpenSettings(View view) {
 		startActivity(new Intent(this, Settings.class));
 	}

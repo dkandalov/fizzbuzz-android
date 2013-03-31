@@ -1,9 +1,9 @@
 package org.fizzbuzzwoof.businesslogic;
 
-/**
- * User: dima
- * Date: 27/03/2013
- */
+import java.util.List;
+
+import static java.util.Arrays.asList;
+
 public class FizzBuzz {
 	public enum Type {
 		FizzBuzz {
@@ -12,6 +12,10 @@ public class FizzBuzz {
 				else if (n % 3 == 0) return "Fizz";
 				else if (n % 5 == 0) return "Buzz";
 				else return String.valueOf(n);
+			}
+
+			@Override public List<String> allChoices(int n) {
+				return asList(String.valueOf(n), "Fizz", "Buzz", "FizzBuzz");
 			}
 		},
 		FizzBuzzWoof {
@@ -25,9 +29,14 @@ public class FizzBuzz {
 				else if (n % 7 == 0) return "Woof";
 				else return String.valueOf(n);
 			}
+
+			@Override public List<String> allChoices(int n) {
+				return null; // TODO
+			}
 		};
 
 		public abstract String numberToString(int n);
+		public abstract List<String> allChoices(int n);
 	}
 
 	public static Type type = Type.FizzBuzz;
