@@ -1,6 +1,10 @@
 package org.fizzbuzzwoof.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,6 +22,8 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class NormalMode extends Activity {
+	private static final int ONE_SECOND = 1000;
+
 	// thread-confined to UI thread
 	private final NormalModeGame game = new NormalModeGame(FizzBuzz.type);
 	private UIThreadTimer uiThreadTimer;
@@ -30,10 +36,18 @@ public class NormalMode extends Activity {
 		updateSecondsLabel(game.timeLeft());
 		updateScoreLabel(game.score());
 
-		uiThreadTimer = new UIThreadTimer(1000, new Handler() {
+		uiThreadTimer = new UIThreadTimer(ONE_SECOND, new Handler() {
 			@Override public void handleMessage(Message msg) {
 				game.oneSecondHasPassed();
 				updateSecondsLabel(game.timeLeft());
+				String message = game.messageForUser();
+				if (message != null) {
+					new MessageDialog(message, NormalMode.this).showAndInvoke(new Runnable() {
+						@Override public void run() {
+							if (game.isOver()) finish();
+						}
+					});
+				}
 			}
 		}).start();
 	}
@@ -73,6 +87,32 @@ public class NormalMode extends Activity {
 				}
 			});
 			layout.addView(textView, new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT));
+		}
+	}
+
+	private static class MessageDialog extends DialogFragment {
+		private final Activity activity;
+		private final String message;
+		private Runnable callback;
+
+		private MessageDialog(String message, Activity activity) {
+			this.activity = activity;
+			this.message = message;
+		}
+
+		@Override public Dialog onCreateDialog(Bundle savedInstanceState) {
+			return new AlertDialog.Builder(getActivity())
+					.setMessage(message)
+					.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+						@Override public void onClick(DialogInterface dialog, int id) {
+							callback.run();
+						}
+					}).create();
+		}
+
+		public void showAndInvoke(Runnable callback) {
+			this.callback = callback;
+			show(activity.getFragmentManager(), "");
 		}
 	}
 
