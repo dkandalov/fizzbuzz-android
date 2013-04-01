@@ -8,15 +8,21 @@ public class NormalModeGame {
 	private final FizzBuzz.Type fizzBuzz;
 	private int counter = INITIAL_VALUE;
 	private int secondsLeft = 60;
+	private final Score score = new Score();
 
 	public NormalModeGame(FizzBuzz.Type fizzBuzz) {
 		this.fizzBuzz = fizzBuzz;
 	}
 
 	public boolean userMadeMove(String answer) {
-		if (!fizzBuzz.isCorrectAnswer(answer, counter)) return false;
-		counter++;
-		return true;
+		if (!fizzBuzz.isCorrectAnswer(answer, counter)) {
+			score.userWasWrong();
+			return false;
+		} else {
+			score.userWasRight();
+			counter++;
+			return true;
+		}
 	}
 
 	public List<String> allPossibleMoves() {
@@ -30,5 +36,26 @@ public class NormalModeGame {
 	public String timeLeft() {
 		if (secondsLeft == 60) return "01:00";
 		else return "00:" + String.format("%02d", secondsLeft);
+	}
+
+	public String score() {
+		return score.asString();
+	}
+
+	static class Score {
+		public void userWasWrong() {
+			// TODO implement
+
+		}
+
+		public void userWasRight() {
+			// TODO implement
+
+		}
+
+		public String asString() {
+			// TODO implement
+			return "";
+		}
 	}
 }

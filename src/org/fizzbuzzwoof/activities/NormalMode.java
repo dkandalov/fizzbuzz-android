@@ -18,6 +18,7 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class NormalMode extends Activity {
+	// thread-confined to UI thread
 	private final NormalModeGame game = new NormalModeGame(FizzBuzz.type);
 	private UIThreadTimer uiThreadTimer;
 
@@ -30,6 +31,7 @@ public class NormalMode extends Activity {
 			@Override public void handleMessage(Message msg) {
 				game.oneSecondHasPassed();
 				updateSecondsLabel(game.timeLeft());
+				updateScoreLabel(game.score());
 			}
 		}).start();
 	}
@@ -39,9 +41,14 @@ public class NormalMode extends Activity {
 		uiThreadTimer.stop();
 	}
 
-	private void updateSecondsLabel(String text) {
+	private void updateScoreLabel(String score) {
+		TextView secondsLeftText = (TextView) findViewById(R.id.normalModeScoreText);
+		secondsLeftText.setText("Score: " + score);
+	}
+
+	private void updateSecondsLabel(String timeLeft) {
 		TextView secondsLeftText = (TextView) findViewById(R.id.normalModeSecondsLeftText);
-		secondsLeftText.setText("Time: " + text);
+		secondsLeftText.setText("Time: " + timeLeft);
 	}
 
 	private void createLabels() {
