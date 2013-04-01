@@ -1,21 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center_vertical"
-    android:id="@+id/normalModeLayout">
+    android:gravity="center_vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:id="@+id/normalModeLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FizzBuzzWoof"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:id="@+id/normalModeStubText"
+            android:textSize="30dp"
+            android:typeface="normal"
+            android:visibility="invisible"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="FizzBuzzWoof"
-        android:layout_gravity="center"
-        android:clickable="true"
-        android:id="@+id/normalModeStubText"
-        android:textSize="30dp"
-        android:typeface="normal"
-        android:visibility="invisible" />
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: 01:00"
+            android:id="@+id/textView1"
+            android:layout_gravity="center"
+            android:gravity="bottom|end" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="0px"
+            android:id="@+id/space"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score: 123"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal|bottom"
+            android:gravity="bottom|end" />
+    </LinearLayout>
+
+</RelativeLayout>
 
