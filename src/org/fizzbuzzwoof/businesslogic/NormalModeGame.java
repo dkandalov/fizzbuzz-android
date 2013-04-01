@@ -23,8 +23,12 @@ public class NormalModeGame {
 		return fizzBuzz.allChoices(counter);
 	}
 
-	public int oneSecondHasPassed() {
-		secondsLeft--;
-		return secondsLeft;
+	public void oneSecondHasPassed() {
+		if (secondsLeft > 0) secondsLeft--;
+	}
+
+	public String timeLeft() {
+		if (secondsLeft == 60) return "01:00";
+		else return "00:" + String.format("%02d", secondsLeft);
 	}
 }

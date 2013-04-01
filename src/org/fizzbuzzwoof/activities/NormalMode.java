@@ -16,7 +16,6 @@ import static android.view.Gravity.CENTER_HORIZONTAL;
 import static android.view.View.INVISIBLE;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-import static java.lang.String.format;
 
 public class NormalMode extends Activity {
 	private final NormalModeGame game = new NormalModeGame(FizzBuzz.type);
@@ -29,8 +28,8 @@ public class NormalMode extends Activity {
 		createLabels();
 		uiThreadTimer = new UIThreadTimer(1000, new Handler() {
 			@Override public void handleMessage(Message msg) {
-				int secondsLeft = game.oneSecondHasPassed();
-				updateSecondsLabel(secondsLeft);
+				game.oneSecondHasPassed();
+				updateSecondsLabel(game.timeLeft());
 			}
 		}).start();
 	}
@@ -40,9 +39,9 @@ public class NormalMode extends Activity {
 		uiThreadTimer.stop();
 	}
 
-	private void updateSecondsLabel(int secondsLeft) {
+	private void updateSecondsLabel(String text) {
 		TextView secondsLeftText = (TextView) findViewById(R.id.normalModeSecondsLeftText);
-		secondsLeftText.setText("Time: 00:" + format("%2d", secondsLeft));
+		secondsLeftText.setText("Time: " + text);
 	}
 
 	private void createLabels() {
