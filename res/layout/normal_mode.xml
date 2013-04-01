@@ -14,7 +14,8 @@
         android:clickable="true"
         android:id="@+id/normalModeStubText"
         android:textSize="30dp"
-        android:typeface="normal" />
+        android:typeface="normal"
+        android:visibility="invisible" />
 
 </LinearLayout>
 

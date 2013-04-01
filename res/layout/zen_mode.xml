@@ -8,13 +8,15 @@
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="FizzBuzzWoof"
+    android:text="One hundred one"
     android:layout_gravity="center"
     android:clickable="true"
     android:id="@+id/zenModeFizzBuzzText"
     android:onClick="fizzBuzzCount"
     android:textSize="49dp"
-    android:typeface="normal" />
+    android:typeface="normal"
+    android:textAlignment="center"
+    android:gravity="center_horizontal" />
 
 </LinearLayout>
 

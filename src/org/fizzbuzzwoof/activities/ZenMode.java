@@ -19,7 +19,7 @@ public class ZenMode extends Activity {
 
 		counter = loadFromConfig();
 		TextView fizzBuzzText = (TextView) findViewById(R.id.zenModeFizzBuzzText);
-		fizzBuzzText.setText(FizzBuzz.type.numberToString(counter));
+		fizzBuzzText.setText(FizzBuzz.type.numberToFizzBuzzString(counter));
 	}
 
 	@Override protected void onPause() {
@@ -45,6 +45,6 @@ public class ZenMode extends Activity {
 
 	public void fizzBuzzCount(View view) {
 		TextView fizzBuzzText = (TextView) findViewById(R.id.zenModeFizzBuzzText);
-		fizzBuzzText.setText(FizzBuzz.type.numberToString(++counter));
+		fizzBuzzText.setText(FizzBuzz.type.numberToFizzBuzzString(++counter));
 	}
 }
