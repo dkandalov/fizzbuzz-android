@@ -2,6 +2,8 @@ package org.fizzbuzzwoof.businesslogic;
 
 import java.util.List;
 
+import static java.lang.String.valueOf;
+
 public class NormalModeGame {
 	private static int INITIAL_VALUE = 1;
 
@@ -43,19 +45,27 @@ public class NormalModeGame {
 	}
 
 	static class Score {
-		public void userWasWrong() {
-			// TODO implement
-
-		}
+		private int value = 0;
+		private int rightAnswersInARow = 0;
+		private int wrongAnswersInARow = 0;
 
 		public void userWasRight() {
-			// TODO implement
+			rightAnswersInARow++;
+			wrongAnswersInARow = 0;
+			if (rightAnswersInARow > 10) {
+				value += (rightAnswersInARow / 10);
+			}
+			value++;
+		}
 
+		public void userWasWrong() {
+			rightAnswersInARow = 0;
+			wrongAnswersInARow++;
+			if (wrongAnswersInARow > 2) value--;
 		}
 
 		public String asString() {
-			// TODO implement
-			return "";
+			return valueOf(value);
 		}
 	}
 }

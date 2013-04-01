@@ -24,6 +24,35 @@ public class NormalModeGameTest {
 	@Test public void whenUserMovesAreCorrect_ScoreShouldIncrease() {
 		NormalModeGame.Score score = new NormalModeGame.Score();
 		assertThat(score.asString(), equalTo("0"));
+
+		score.userWasRight(); assertThat(score.asString(), equalTo("1"));
+		score.userWasRight(); assertThat(score.asString(), equalTo("2"));
+	}
+
+	@Test public void whenUserMovesAreCorrectLongEnough_ScoreShouldIncreaseFaster() {
+		NormalModeGame.Score score = new NormalModeGame.Score();
+		assertThat(score.asString(), equalTo("0"));
+
+		userWasRightNTimes(score, 10); assertThat(score.asString(), equalTo("10"));
+		score.userWasRight(); assertThat(score.asString(), equalTo("12"));
+		userWasRightNTimes(score, 8); assertThat(score.asString(), equalTo("28"));
+		score.userWasRight(); assertThat(score.asString(), equalTo("31"));
+	}
+
+	@Test public void whenUserMovesAreWrongLongEnough_ScoreShouldDecrease() {
+		NormalModeGame.Score score = new NormalModeGame.Score();
+		assertThat(score.asString(), equalTo("0"));
+
+		score.userWasRight(); assertThat(score.asString(), equalTo("1"));
+		score.userWasWrong(); assertThat(score.asString(), equalTo("1"));
+		score.userWasWrong(); assertThat(score.asString(), equalTo("1"));
+		score.userWasWrong(); assertThat(score.asString(), equalTo("0"));
+	}
+
+	private static void userWasRightNTimes(NormalModeGame.Score score, int n) {
+		for (int i = 0; i < n; i++) {
+			score.userWasRight();
+		}
 	}
 
 	private static void nSecondsHavePassed(NormalModeGame game, int numberOfSeconds) {

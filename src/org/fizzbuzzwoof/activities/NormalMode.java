@@ -27,11 +27,13 @@ public class NormalMode extends Activity {
 		setContentView(R.layout.normal_mode);
 
 		createLabels();
+		updateSecondsLabel(game.timeLeft());
+		updateScoreLabel(game.score());
+
 		uiThreadTimer = new UIThreadTimer(1000, new Handler() {
 			@Override public void handleMessage(Message msg) {
 				game.oneSecondHasPassed();
 				updateSecondsLabel(game.timeLeft());
-				updateScoreLabel(game.score());
 			}
 		}).start();
 	}
@@ -67,6 +69,7 @@ public class NormalMode extends Activity {
 					} else {
 						textView.setVisibility(INVISIBLE);
 					}
+					updateScoreLabel(game.score());
 				}
 			});
 			layout.addView(textView, new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT));
