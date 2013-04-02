@@ -8,28 +8,36 @@ import android.view.View;
 import android.widget.TextView;
 import org.fizzbuzzwoof.R;
 import org.fizzbuzzwoof.businesslogic.FizzBuzz;
+import org.fizzbuzzwoof.businesslogic.ZenModeGame;
 
 public class ZenMode extends Activity {
-	private static int INITIAL_VALUE = 1;
-	private int counter = INITIAL_VALUE;
+	private final ZenModeGame game = new ZenModeGame(FizzBuzz.type);
 
 	@Override public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.zen_mode);
 
-		counter = loadFromConfig();
-		TextView fizzBuzzText = (TextView) findViewById(R.id.zenModeFizzBuzzText);
-		fizzBuzzText.setText(FizzBuzz.type.numberToFizzBuzzString(counter));
+		game.setState(loadFromConfig());
+		updateUI(game.getCurrentNumber());
 	}
 
 	@Override protected void onPause() {
 		super.onPause();
-		saveToConfig(counter);
+		saveToConfig(game.getState());
 	}
 
 	@Override public void onBackPressed() {
-		counter = INITIAL_VALUE;
+		game.resetState();
 		super.onBackPressed();
+	}
+
+	@SuppressWarnings("UnusedParameters")
+	public void fizzBuzzClicked(View view) {
+		updateUI(game.nextNumber());
+	}
+
+	private void updateUI(String text) {
+		((TextView) findViewById(R.id.zenModeFizzBuzzText)).setText(text);
 	}
 
 	private void saveToConfig(int counter) {
@@ -40,12 +48,6 @@ public class ZenMode extends Activity {
 
 	private int loadFromConfig() {
 		SharedPreferences preferences = getSharedPreferences(getString(R.string.config_file_key), Context.MODE_PRIVATE);
-		return preferences.getInt(getString(R.string.config_zen_mode_counter), INITIAL_VALUE);
-	}
-
-	@SuppressWarnings("UnusedParameters")
-	public void fizzBuzzCount(View view) {
-		TextView fizzBuzzText = (TextView) findViewById(R.id.zenModeFizzBuzzText);
-		fizzBuzzText.setText(FizzBuzz.type.numberToFizzBuzzString(++counter));
+		return preferences.getInt(getString(R.string.config_zen_mode_counter), ZenModeGame.INITIAL_VALUE);
 	}
 }

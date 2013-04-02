@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center_vertical"
-    android:onClick="fizzBuzzCount">
+    android:onClick="fizzBuzzClicked">
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -12,7 +12,7 @@
     android:layout_gravity="center"
     android:clickable="true"
     android:id="@+id/zenModeFizzBuzzText"
-    android:onClick="fizzBuzzCount"
+    android:onClick="fizzBuzzClicked"
     android:textSize="49dp"
     android:typeface="normal"
     android:textAlignment="center"
