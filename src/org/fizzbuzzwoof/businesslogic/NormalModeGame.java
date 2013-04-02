@@ -26,6 +26,8 @@ public class NormalModeGame {
 		} else {
 			score.userWasRight();
 			counter++;
+			if (counter == 49) messagesForUser.addLast("Please upgrade to premium version to access numbers above 50");
+			if (counter == 50) messagesForUser.addLast("Nah.. just kidding :)");
 			return true;
 		}
 	}
@@ -35,11 +37,7 @@ public class NormalModeGame {
 	}
 
 	public void oneSecondHasPassed() {
-		if (counter == 50) {
-			messagesForUser.addLast("Please upgrade to premium version to access numbers above 50");
-			messagesForUser.addLast("Nah.. just kidding :)");
-		}
-		if (secondsLeft == 1) messagesForUser.addLast("This is the end. Your score is: " + score());
+		if (secondsLeft == 1) messagesForUser.addLast("Your score is: " + score());
 		if (secondsLeft > 0) secondsLeft--;
 	}
 
