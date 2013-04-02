@@ -43,6 +43,7 @@ public class ZenMode extends Activity {
 		return preferences.getInt(getString(R.string.config_zen_mode_counter), INITIAL_VALUE);
 	}
 
+	@SuppressWarnings("UnusedParameters")
 	public void fizzBuzzCount(View view) {
 		TextView fizzBuzzText = (TextView) findViewById(R.id.zenModeFizzBuzzText);
 		fizzBuzzText.setText(FizzBuzz.type.numberToFizzBuzzString(++counter));

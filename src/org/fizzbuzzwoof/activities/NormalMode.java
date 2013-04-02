@@ -40,8 +40,9 @@ public class NormalMode extends Activity {
 			@Override public void handleMessage(Message msg) {
 				game.oneSecondHasPassed();
 				updateSecondsLabel(game.timeLeft());
-				String message = game.messageForUser();
-				if (message != null) {
+
+				String message;
+				while ((message = game.messageForUser()) != null) {
 					new MessageDialog(message, NormalMode.this).showAndInvoke(new Runnable() {
 						@Override public void run() {
 							if (game.isOver()) finish();

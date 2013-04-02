@@ -1,5 +1,6 @@
 package org.fizzbuzzwoof.businesslogic;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import static java.lang.String.format;
@@ -12,7 +13,7 @@ public class NormalModeGame {
 	private int counter = INITIAL_VALUE;
 	private int secondsLeft = 60;
 	private final Score score = new Score();
-	private String messageForUser;
+	private LinkedList<String> messagesForUser = new LinkedList<String>();
 
 	public NormalModeGame(FizzBuzz.Type fizzBuzz) {
 		this.fizzBuzz = fizzBuzz;
@@ -34,7 +35,11 @@ public class NormalModeGame {
 	}
 
 	public void oneSecondHasPassed() {
-		if (secondsLeft == 1) messageForUser = "Your score is: " + score();
+		if (counter == 50) {
+			messagesForUser.addLast("Please upgrade to premium version to access numbers above 50");
+			messagesForUser.addLast("Nah.. just kidding :)");
+		}
+		if (secondsLeft == 1) messagesForUser.addLast("This is the end. Your score is: " + score());
 		if (secondsLeft > 0) secondsLeft--;
 	}
 
@@ -48,9 +53,7 @@ public class NormalModeGame {
 	}
 
 	public String messageForUser() {
-		String result = messageForUser;
-		messageForUser = null;
-		return result;
+		return messagesForUser.removeFirst();
 	}
 
 	public boolean isOver() {
