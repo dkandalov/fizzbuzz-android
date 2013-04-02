@@ -9,6 +9,7 @@ import android.view.View;
 import org.fizzbuzzwoof.R;
 import org.fizzbuzzwoof.businesslogic.FizzBuzz;
 
+@SuppressWarnings("UnusedParameters")
 public class Home extends Activity {
 	@Override public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

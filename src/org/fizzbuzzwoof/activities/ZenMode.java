@@ -36,7 +36,7 @@ public class ZenMode extends Activity {
 	public void fizzBuzzClicked(View view) {
 		updateUI(game.nextNumber());
 		if (game.isFizzBuzz()) {
-			((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(500);
+			((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(100);
 		}
 	}
 
