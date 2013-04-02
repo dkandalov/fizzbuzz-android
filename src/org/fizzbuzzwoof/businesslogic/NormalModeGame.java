@@ -53,6 +53,7 @@ public class NormalModeGame {
 	}
 
 	public String messageForUser() {
+		if (messagesForUser.isEmpty()) return null;
 		return messagesForUser.removeFirst();
 	}
 
