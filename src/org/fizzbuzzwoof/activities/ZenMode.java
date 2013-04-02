@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.TextView;
 import org.fizzbuzzwoof.R;
@@ -34,6 +35,9 @@ public class ZenMode extends Activity {
 	@SuppressWarnings("UnusedParameters")
 	public void fizzBuzzClicked(View view) {
 		updateUI(game.nextNumber());
+		if (game.isFizzBuzz()) {
+			((Vibrator) getSystemService(Context.VIBRATOR_SERVICE)).vibrate(500);
+		}
 	}
 
 	private void updateUI(String text) {

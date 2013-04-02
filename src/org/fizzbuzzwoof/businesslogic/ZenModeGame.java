@@ -18,6 +18,11 @@ public class ZenModeGame {
 		return fizzBuzz.numberToFizzBuzzString(counter);
 	}
 
+	public boolean isFizzBuzz() {
+		int i = fizzBuzz.allChoices(counter).indexOf(getCurrentNumber());
+		return i > 0;
+	}
+
 	public void resetState() {
 		counter = INITIAL_VALUE;
 	}
