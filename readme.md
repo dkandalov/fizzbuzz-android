@@ -6,9 +6,9 @@ This is the game description http://en.wikipedia.org/wiki/Fizz_buzz
 App looks like this:
 <img src="https://raw.github.com/dkandalov/fizzbuzz-android/master/screenshots/home.png" alt="toolwindow" title="toolwindow" align="center" width="200px"/>
 <span widt="20px"/>
-<img src="https://raw.github.com/dkandalov/fizzbuzz-android/master/screenshots/normal_mode.png" alt="toolwindow" title="toolwindow" align="center" width="200px"/>
-<span widt="20px"/>
 <img src="https://raw.github.com/dkandalov/fizzbuzz-android/master/screenshots/settings.png" alt="toolwindow" title="toolwindow" align="center" width="200px"/>
+<span widt="20px"/>
+<img src="https://raw.github.com/dkandalov/fizzbuzz-android/master/screenshots/normal_mode.png" alt="toolwindow" title="toolwindow" align="center" width="200px"/>
 
 
 Is it really that fun?
