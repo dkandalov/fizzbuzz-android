@@ -1,7 +1,7 @@
 Obviously this is a FizzBuzz game for Android
 =======
 This is the game description http://en.wikipedia.org/wiki/Fizz_buzz
-("Adults may play Fizz Buzz as a drinking game, where making a mistake leads to the player having to make a drinking-related forfeit.")
+(note that "Adults may play Fizz Buzz as a drinking game, where making a mistake leads to the player having to make a drinking-related forfeit.")
 
 App looks like this:
 <img src="https://raw.github.com/dkandalov/fizzbuzz-android/master/screenshots/home.png" alt="toolwindow" title="toolwindow" align="center" width="200px"/>
