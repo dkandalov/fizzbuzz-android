@@ -15,3 +15,5 @@ Is it really that fun?
 ==========
 No, I just wanted to create a simple Android app.
 But may be with voice recognition it will be...
+
+(This is [google play link](https://play.google.com/store/apps/details?id=org.fizzbuzzwoof) but please do NOT install it.)
